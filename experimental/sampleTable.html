@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>Sample table</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="experiment.js"></script>
+		<style>
+			html {
+				font-family: "Verdana"
+			}
+			.data {
+				border: 0px solid #222;
+				border-spacing: 0;
+				padding: 0;
+				margin: 0;
+			}
+			.data tr {
+				padding: 1px;
+				margin: 1px;
+			}
+			.data tr:nth-child(odd) {
+				background-color: #eee;
+			}
+			.data tr:hover {
+				background-color: #030830;
+				color: #ecffff;
+			}
+			.data td {
+				border-right: 1px solid #222;
+				margin-right: 10px;
+				margin-right: 10px;
+			}
+			.data td:last-child {
+				border-width: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<table class="data"></table>
+
+		<script> 
+			$(document).ready(function() {
+				var table = $(".data") // $(".data") is an array of all elements with the "data" class
+				var row, col;
+				var dataRow, dataCol;				
+				
+				GetKeyValueRow(table, j, 'serial-number', 'Serial Number');
+				header = j['case-file-header'];
+				GetKeyValueRow(table, header, 'mark-identification', 'Word Mark');
+				GetKeyValueRow(table, header, 'domestic-representative-name', 'Attorney of Record');
+				statements = j['case-file-statements']
+				text = ''
+				if (statements.hasOwnProperty('case-file-statement') {
+					statement = statements['case-file-statement'];
+					for (var i = 0; i < statement.length; i++) {
+						text += statement[i]['text'];
+					}
+				}
+				AddRow(table, "Trademark Text", text)
+
+				/*
+			    for(var i = 0; i < j.length; i++) {
+			    	dataRow = dataSet[i];
+			    	row = $("<tr>");
+			    	for(var j = 0; j < dataRow.length; j++) {
+			    		dataCol = dataRow[j];
+			    		col = $("<td>");
+			    		col.text(dataCol);
+			    		row.append(col);
+			    	}
+			    	table.append(row);
+			    }
+			    */
+			} );
+		</script>
+	</body>
+</html>

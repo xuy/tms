@@ -55,3 +55,6 @@ target/
 
 # Big chunk of data
 bulk_data/
+
+# Mac OS X crap
+.DS_Store

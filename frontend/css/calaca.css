@@ -22,7 +22,8 @@ body {
 .jumbotron {
   height: 280px;
   width: 100%;
-  background-color: #ed4877;
+	/* background-color: #ed4877; */
+	background-color: #206276;
 }
 .title {
   font-size: 40px;

@@ -41,4 +41,12 @@ function processResultController($scope) {
     if (text != '') {
 	    AddRow(table, "Trademark Text", text)
     }
+
+    text = ''
+    if (result.hasOwnProperty('correspondent')) {
+    	address = result['correspondent'];
+    	text = address['address-1'] + '\t' + address['address-2'] 
+    		   + address['address-3']  + '\t' + address['address-4'] 
+    }
+    AddRow(table, "Correspondent", text)
 }

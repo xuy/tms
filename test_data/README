@@ -1,0 +1,4 @@
+Data can be downloaded from Google.
+e.g.
+
+wget 'http://storage.googleapis.com/trademarks/applications/2014/apc140411.zip'
